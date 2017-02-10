@@ -1,4 +1,4 @@
-//Pike Place JS File
+//Pike Place Store
 
 var pikePlace = {
   min: 17,
@@ -44,12 +44,12 @@ var pikePlace = {
     // 5. Append the UL to the element that you stored in step 1
     // ???
 
-    var newTotal = document.createElement('p');
+    var newTotal = document.createElement('li');
     var newStrong = document.createElement('strong');
     newTotal.appendChild(newStrong);
-    var newStrongContent = document.createTextNode('Total: ' + this.total);
+    var newStrongContent = document.createTextNode('Total: ' + this.total + ' cookies');
     newStrong.appendChild(newStrongContent);
-    divPikePlace.appendChild(newTotal);
+    position.appendChild(newTotal);
 
   }
 };
