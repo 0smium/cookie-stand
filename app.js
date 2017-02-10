@@ -1,10 +1,13 @@
+//Pike Place JS File
+
 var pikePlace = {
-  min: 1,
-  max: 2,
-  avg: 3,
+  min: 17,
+  max: 88,
+  avg: 5.2,
+  timeOfDay: ['10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm'],
   // What other properties might you need to keep track of?
   getRandom: function(min, max) {
-    return Math.random() * ((max - min) + min);
+    return (Math.random() * ((this.max - this.min) + this.min)).toFixed(0);
   },
   // other methods to aggregate data...
   render: function() {
