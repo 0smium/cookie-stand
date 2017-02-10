@@ -4,7 +4,7 @@ var pikePlace = {
   min: 17,
   max: 88,
   avg: 5.2,
-  timeOfDay: ['10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm'],
+  timeOfDay: ['10am', '11am', '12am', '01pm', '02pm', '03pm', '04pm', '05pm'],
   // What other properties might you need to keep track of?
   getRandom: function(min, max) {
     return (Math.random() * ((this.max - this.min) + this.min));
@@ -18,14 +18,39 @@ var pikePlace = {
       this.cookiesPerHour.push(rand);
       this.total += rand;
     }
-  }
+  },
   // other methods to aggregate data...
-  // render: function() {
+  render: function() {
     // render your object data to the DOM as an unordered list of data points!!
+    this.populate()
     // 1. Get an element by Id from your html
+    var divPikePlace  = document.getElementById('pikePlace');
+    var newH2 = document.createElement('h2');
+    var newHeading = document.createTextNode('Pike Place');
+    newH2.appendChild(newHeading);
+    divPikePlace.appendChild(newH2);
     // 2. Create a UL element
+    var newUL = document.createElement('ul');
+    divPikePlace.appendChild(newUL);
+    var position = document.getElementsByTagName('ul')[0];
     // 3. Create and populate an LI element for each of the data points that you want to render
-    // 4. Append the LI to the UL
+    for (i = 0; i < this.timeOfDay.length; i++) {
+      var newLi = document.createElement('li');
+      var newText = document.createTextNode(this.timeOfDay[i] + ': ' + this.cookiesPerHour[i] + ' cookies');
+      newLi.appendChild(newText);
+      // 4. Append the LI to the UL
+      position.appendChild(newLi);
+    }
     // 5. Append the UL to the element that you stored in step 1
-  // }
+    // ???
+
+    var newTotal = document.createElement('p');
+    var newStrong = document.createElement('strong');
+    newTotal.appendChild(newStrong);
+    var newStrongContent = document.createTextNode('Total: ' + this.total);
+    newStrong.appendChild(newStrongContent);
+    divPikePlace.appendChild(newTotal);
+
+  }
 };
+pikePlace.render()
