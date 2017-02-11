@@ -112,7 +112,7 @@ var seaTac = {
 };
 seaTac.render()
 
-//Southcenter Airport
+//Southcenter
 
 var southcenter = {
   min:11,
@@ -282,3 +282,11 @@ var alki = {
   }
 };
 alki.render()
+
+var grandTotal = pikePlace.total + seaTac.total + southcenter.total + bellevueSquare.total + alki.total
+var grandTotalDivLocation  = document.getElementById('grandTotal');
+var grandTotalH2 = document.createElement('h2');
+var grandTotalHeading = document.createTextNode('Grand Total: ' + grandTotal);
+
+grandTotalH2.appendChild(grandTotalHeading);
+grandTotalDivLocation.appendChild(grandTotalH2);
