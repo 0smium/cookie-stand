@@ -36,8 +36,9 @@ var pikePlace = {
     // 3. Create and populate an LI element for each of the data points that you want to render
     for (i = 0; i < this.timeOfDay.length; i++) {
       var newLi = document.createElement('li');
-      var newText = document.createTextNode(this.timeOfDay[i] + ': ' + this.cookiesPerHour[i] + ' cookies');
-      newLi.appendChild(newText);
+      // var newText = document.createTextNode(this.timeOfDay[i] + ': ' + this.cookiesPerHour[i] + ' cookies');
+      // newLi.appendChild(newText);
+      newLi.textContent = this.timeOfDay[i] + ': ' + this.cookiesPerHour[i] + ' cookies';
       // 4. Append the LI to the UL
       ULposition.appendChild(newLi);
     }
@@ -47,8 +48,9 @@ var pikePlace = {
     var totalLI = document.createElement('li');
     var newStrong = document.createElement('strong');
     totalLI.appendChild(newStrong);
-    var newStrongContent = document.createTextNode('Total: ' + this.total + ' cookies');
-    newStrong.appendChild(newStrongContent);
+    // var newStrongContent = document.createTextNode('Total: ' + this.total + ' cookies');
+    // newStrong.appendChild(newStrongContent);
+    newStrong.textContent = 'Total: ' + this.total + ' cookies';
     ULposition.appendChild(totalLI);
 
   }
@@ -93,8 +95,9 @@ var seaTac = {
     // 3. Create and populate an LI element for each of the data points that you want to render
     for (i = 0; i < this.timeOfDay.length; i++) {
       var newLi = document.createElement('li');
-      var newText = document.createTextNode(this.timeOfDay[i] + ': ' + this.cookiesPerHour[i] + ' cookies');
-      newLi.appendChild(newText);
+      // var newText = document.createTextNode(this.timeOfDay[i] + ': ' + this.cookiesPerHour[i] + ' cookies');
+      // newLi.appendChild(newText);
+      newLi.textContent = this.timeOfDay[i] + ': ' + this.cookiesPerHour[i] + ' cookies';
       // 4. Append the LI to the UL
       ULposition.appendChild(newLi);
     }
@@ -104,8 +107,9 @@ var seaTac = {
     var totalLI = document.createElement('li');
     var newStrong = document.createElement('strong');
     totalLI.appendChild(newStrong);
-    var newStrongContent = document.createTextNode('Total: ' + this.total + ' cookies');
-    newStrong.appendChild(newStrongContent);
+    // var newStrongContent = document.createTextNode('Total: ' + this.total + ' cookies');
+    // newStrong.appendChild(newStrongContent);
+    newStrong.textContent = 'Total: ' + this.total + ' cookies';
     ULposition.appendChild(totalLI);
 
   }
@@ -150,8 +154,9 @@ var southcenter = {
     // 3. Create and populate an LI element for each of the data points that you want to render
     for (i = 0; i < this.timeOfDay.length; i++) {
       var newLi = document.createElement('li');
-      var newText = document.createTextNode(this.timeOfDay[i] + ': ' + this.cookiesPerHour[i] + ' cookies');
-      newLi.appendChild(newText);
+      // var newText = document.createTextNode(this.timeOfDay[i] + ': ' + this.cookiesPerHour[i] + ' cookies');
+      // newLi.appendChild(newText);
+      newLi.textContent = this.timeOfDay[i] + ': ' + this.cookiesPerHour[i] + ' cookies';
       // 4. Append the LI to the UL
       ULposition.appendChild(newLi);
     }
@@ -161,8 +166,9 @@ var southcenter = {
     var totalLI = document.createElement('li');
     var newStrong = document.createElement('strong');
     totalLI.appendChild(newStrong);
-    var newStrongContent = document.createTextNode('Total: ' + this.total + ' cookies');
-    newStrong.appendChild(newStrongContent);
+    // var newStrongContent = document.createTextNode('Total: ' + this.total + ' cookies');
+    // newStrong.appendChild(newStrongContent);
+    newStrong.textContent = 'Total: ' + this.total + ' cookies';
     ULposition.appendChild(totalLI);
 
   }
@@ -207,8 +213,9 @@ var bellevueSquare = {
     // 3. Create and populate an LI element for each of the data points that you want to render
     for (i = 0; i < this.timeOfDay.length; i++) {
       var newLi = document.createElement('li');
-      var newText = document.createTextNode(this.timeOfDay[i] + ': ' + this.cookiesPerHour[i] + ' cookies');
-      newLi.appendChild(newText);
+      // var newText = document.createTextNode(this.timeOfDay[i] + ': ' + this.cookiesPerHour[i] + ' cookies');
+      // newLi.appendChild(newText);
+      newLi.textContent = this.timeOfDay[i] + ': ' + this.cookiesPerHour[i] + ' cookies';
       // 4. Append the LI to the UL
       ULposition.appendChild(newLi);
     }
@@ -218,8 +225,9 @@ var bellevueSquare = {
     var totalLI = document.createElement('li');
     var newStrong = document.createElement('strong');
     totalLI.appendChild(newStrong);
-    var newStrongContent = document.createTextNode('Total: ' + this.total + ' cookies');
-    newStrong.appendChild(newStrongContent);
+    // var newStrongContent = document.createTextNode('Total: ' + this.total + ' cookies');
+    // newStrong.appendChild(newStrongContent);
+    newStrong.textContent = 'Total: ' + this.total + ' cookies';
     ULposition.appendChild(totalLI);
 
   }
@@ -264,8 +272,9 @@ var alki = {
     // 3. Create and populate an LI element for each of the data points that you want to render
     for (i = 0; i < this.timeOfDay.length; i++) {
       var newLi = document.createElement('li');
-      var newText = document.createTextNode(this.timeOfDay[i] + ': ' + this.cookiesPerHour[i] + ' cookies');
-      newLi.appendChild(newText);
+      // var newText = document.createTextNode(this.timeOfDay[i] + ': ' + this.cookiesPerHour[i] + ' cookies');
+      // newLi.appendChild(newText);
+      newLi.textContent = this.timeOfDay[i] + ': ' + this.cookiesPerHour[i] + ' cookies';
       // 4. Append the LI to the UL
       ULposition.appendChild(newLi);
     }
@@ -275,8 +284,9 @@ var alki = {
     var totalLI = document.createElement('li');
     var newStrong = document.createElement('strong');
     totalLI.appendChild(newStrong);
-    var newStrongContent = document.createTextNode('Total: ' + this.total + ' cookies');
-    newStrong.appendChild(newStrongContent);
+    // var newStrongContent = document.createTextNode('Total: ' + this.total + ' cookies');
+    // newStrong.appendChild(newStrongContent);
+    newStrong.textContent = 'Total: ' + this.total + ' cookies';
     ULposition.appendChild(totalLI);
 
   }
