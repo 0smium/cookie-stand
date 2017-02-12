@@ -46,6 +46,7 @@ var pikePlace = {
     // ???
 
     var totalLI = document.createElement('li');
+    totalLI.className = 'total';
     var newStrong = document.createElement('strong');
     totalLI.appendChild(newStrong);
     // var newStrongContent = document.createTextNode('Total: ' + this.total + ' cookies');
@@ -105,6 +106,7 @@ var seaTac = {
     // ???
 
     var totalLI = document.createElement('li');
+    totalLI.className = 'total';
     var newStrong = document.createElement('strong');
     totalLI.appendChild(newStrong);
     // var newStrongContent = document.createTextNode('Total: ' + this.total + ' cookies');
@@ -164,6 +166,7 @@ var southcenter = {
     // ???
 
     var totalLI = document.createElement('li');
+    totalLI.className = 'total';
     var newStrong = document.createElement('strong');
     totalLI.appendChild(newStrong);
     // var newStrongContent = document.createTextNode('Total: ' + this.total + ' cookies');
@@ -223,6 +226,7 @@ var bellevueSquare = {
     // ???
 
     var totalLI = document.createElement('li');
+    totalLI.className = 'total';
     var newStrong = document.createElement('strong');
     totalLI.appendChild(newStrong);
     // var newStrongContent = document.createTextNode('Total: ' + this.total + ' cookies');
@@ -282,6 +286,7 @@ var alki = {
     // ???
 
     var totalLI = document.createElement('li');
+    totalLI.className = 'total';
     var newStrong = document.createElement('strong');
     totalLI.appendChild(newStrong);
     // var newStrongContent = document.createTextNode('Total: ' + this.total + ' cookies');

@@ -2,6 +2,7 @@
 body {
   background-image: url(./algae-vertical.png);
   background-repeat: repeat;
+  font-family: serif;
 }
 
 #container {
@@ -18,19 +19,35 @@ body {
   float: left;
 }
 
-.total {
+.grandTotal {
   clear: both;
   text-align: center;
 }
 
 .float h3 {
   margin-left: 20px;
+  font-family: serif;
 }
 
 h1 {
   text-align: center;
+  font-family: 'Gloria Hallelujah', cursive;
+  color: #002222;
+}
+
+h2 {
+  color:#117766;
 }
 
 h2.projections {
   margin-left: 20px;
+  font-family: 'Slabo 27px', serif;
+}
+
+li {
+  font-family: serif;
+}
+
+li.total{
+  padding-top:5px;
 }
