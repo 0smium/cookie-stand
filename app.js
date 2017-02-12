@@ -25,10 +25,10 @@ var pikePlace = {
     this.populate()
     // 1. Get an element by Id from your html
     var divLocation  = document.getElementById('pikePlace');
-    var newH2 = document.createElement('h2');
+    var newh3 = document.createElement('h3');
     var newHeading = document.createTextNode('Pike Place');
-    newH2.appendChild(newHeading);
-    divLocation.appendChild(newH2);
+    newh3.appendChild(newHeading);
+    divLocation.appendChild(newh3);
     // 2. Create a UL element
     var newUL = document.createElement('ul');
     divLocation.appendChild(newUL);
@@ -84,10 +84,10 @@ var seaTac = {
     this.populate()
     // 1. Get an element by Id from your html
     var divLocation  = document.getElementById('seaTac');
-    var newH2 = document.createElement('h2');
+    var newh3 = document.createElement('h3');
     var newHeading = document.createTextNode('SeaTac Airport');
-    newH2.appendChild(newHeading);
-    divLocation.appendChild(newH2);
+    newh3.appendChild(newHeading);
+    divLocation.appendChild(newh3);
     // 2. Create a UL element
     var newUL = document.createElement('ul');
     divLocation.appendChild(newUL);
@@ -143,10 +143,10 @@ var southcenter = {
     this.populate()
     // 1. Get an element by Id from your html
     var divLocation  = document.getElementById('southcenter');
-    var newH2 = document.createElement('h2');
+    var newh3 = document.createElement('h3');
     var newHeading = document.createTextNode('Southcenter');
-    newH2.appendChild(newHeading);
-    divLocation.appendChild(newH2);
+    newh3.appendChild(newHeading);
+    divLocation.appendChild(newh3);
     // 2. Create a UL element
     var newUL = document.createElement('ul');
     divLocation.appendChild(newUL);
@@ -202,10 +202,10 @@ var bellevueSquare = {
     this.populate()
     // 1. Get an element by Id from your html
     var divLocation  = document.getElementById('bellevueSquare');
-    var newH2 = document.createElement('h2');
+    var newh3 = document.createElement('h3');
     var newHeading = document.createTextNode('Bellevue Square');
-    newH2.appendChild(newHeading);
-    divLocation.appendChild(newH2);
+    newh3.appendChild(newHeading);
+    divLocation.appendChild(newh3);
     // 2. Create a UL element
     var newUL = document.createElement('ul');
     divLocation.appendChild(newUL);
@@ -261,10 +261,10 @@ var alki = {
     this.populate()
     // 1. Get an element by Id from your html
     var divLocation  = document.getElementById('alki');
-    var newH2 = document.createElement('h2');
+    var newh3 = document.createElement('h3');
     var newHeading = document.createTextNode('Alki');
-    newH2.appendChild(newHeading);
-    divLocation.appendChild(newH2);
+    newh3.appendChild(newHeading);
+    divLocation.appendChild(newh3);
     // 2. Create a UL element
     var newUL = document.createElement('ul');
     divLocation.appendChild(newUL);
@@ -295,8 +295,8 @@ alki.render()
 
 var grandTotal = pikePlace.total + seaTac.total + southcenter.total + bellevueSquare.total + alki.total
 var grandTotalDivLocation  = document.getElementById('grandTotal');
-var grandTotalH2 = document.createElement('h2');
-var grandTotalHeading = document.createTextNode('Grand Total: ' + grandTotal);
+var grandTotalh2 = document.createElement('h2');
+var grandTotalHeading = document.createTextNode('Total: ' + grandTotal + ' cookies');
 
-grandTotalH2.appendChild(grandTotalHeading);
-grandTotalDivLocation.appendChild(grandTotalH2);
+grandTotalh2.appendChild(grandTotalHeading);
+grandTotalDivLocation.appendChild(grandTotalh2);

@@ -1,1 +1,36 @@
 /*Main Stylesheet for index.html*/
+body {
+  background-image: url(./algae-vertical.png);
+  background-repeat: repeat;
+}
+
+#container {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255, 255, 255, 0.4);
+  max-width: 800px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.float {
+  width: 33%;
+  float: left;
+}
+
+.total {
+  clear: both;
+  text-align: center;
+}
+
+.float h3 {
+  margin-left: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2.projections {
+  margin-left: 20px;
+}
