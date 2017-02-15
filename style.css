@@ -19,13 +19,16 @@ body {
   float: left;
 }
 
+.float h3 {
+  margin-left: 20px;
+}
+
 .grandTotal {
   clear: both;
   text-align: center;
 }
 
-.float h3 {
-  margin-left: 20px;
+h3 {
   font-family: serif;
 }
 
@@ -48,6 +51,56 @@ li {
   font-family: serif;
 }
 
-li.total{
+li.total {
   padding-top:5px;
+}
+
+footer {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+a, a:visited {
+  color:#002222;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #0088cc;
+}
+
+/* For the Style Guide */
+
+p.colors {
+  margin-left: 20px;
+  margin-right: 500px;
+}
+
+ul.colorList {
+  width: 100px;
+}
+
+span.color {
+  color: white;
+  padding-left: 10px;
+}
+
+li.color1 {
+  background-color: #002222
+}
+
+li.color2 {
+  background-color: #117766
+}
+
+li.color3 {
+  background-color: #0088cc
+}
+
+li.color4 {
+  background-color: #00aaee
+}
+
+li.color5 {
+  background-color: #88bb22
 }
