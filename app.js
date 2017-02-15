@@ -7,6 +7,39 @@ var shopLocation = function (name, min, max, avg) {
   this.min = min; //min cookies per hour
   this.max = max; //max cookies per hour
   this.avg = avg; //avg cookies per customer
+  this.getRandom = function (min, max) {
+    return (Math.random() * ((this.max - this.min) + this.min));
+  }
+  this.cookiesPerHour = [];
+  this.total = 0;
+  this.populate = function() {
+    for (i = 0; i < timeOfDay.length; i++) {
+      var rand =  Math.round(this.getRandom() * this.avg);
+      this.cookiesPerHour.push(rand);
+      this.total += rand;
+  }
+  this.render = function() {
+    this.populate();
+    var divLocation  = document.getElementById('pikePlace');
+    var newh3 = document.createElement('h3');
+    var newHeading = document.createTextNode('Pike Place');
+    newh3.appendChild(newHeading);
+    divLocation.appendChild(newh3);
+    var newUL = document.createElement('ul');
+    divLocation.appendChild(newUL);
+    var ULposition = document.getElementsByTagName('ul')[0];
+    for (i = 0; i < timeOfDay.length; i++) {
+      var newLi = document.createElement('li');
+      newLi.textContent = timeOfDay[i] + ': ' + this.cookiesPerHour[i] + ' cookies';
+      ULposition.appendChild(newLi);
+    }
+    var totalLI = document.createElement('li');
+    totalLI.className = 'total';
+    var newStrong = document.createElement('strong');
+    totalLI.appendChild(newStrong);
+    newStrong.textContent = 'Total: ' + this.total + ' cookies';
+    ULposition.appendChild(totalLI);
+  }
 }
 
 
