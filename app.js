@@ -2,8 +2,9 @@
 var timeOfDay = ['10am', '11am', '12am', '01pm', '02pm', '03pm', '04pm', '05pm'];
 
 //Create location constructor 'shopLocation'
-var shopLocation = function (name, min, max, avg) {
-  this.name = name; //name of location as string
+var shopLocation = function (name, fullName, min, max, avg) {
+  this.name = name; //name of location, abbreviated
+  this.fullName = fullName; //name of location, full name as string
   this.min = min; //min cookies per hour
   this.max = max; //max cookies per hour
   this.avg = avg; //avg cookies per customer
@@ -13,16 +14,16 @@ var shopLocation = function (name, min, max, avg) {
   this.cookiesPerHour = [];
   this.total = 0;
   this.populate = function() {
-    for (i = 0; i < timeOfDay.length; i++) {
-      var rand =  Math.round(this.getRandom() * this.avg);
-      this.cookiesPerHour.push(rand);
-      this.total += rand;
+  for (i = 0; i < timeOfDay.length; i++) {
+    var rand =  Math.round(this.getRandom() * this.avg);
+    this.cookiesPerHour.push(rand);
+    this.total += rand;
   }
   this.render = function() {
     this.populate();
-    var divLocation  = document.getElementById('pikePlace');
+    var divLocation  = document.getElementById(this.name);
     var newh3 = document.createElement('h3');
-    var newHeading = document.createTextNode('Pike Place');
+    var newHeading = document.createTextNode(this.fullName);
     newh3.appendChild(newHeading);
     divLocation.appendChild(newh3);
     var newUL = document.createElement('ul');
@@ -39,6 +40,7 @@ var shopLocation = function (name, min, max, avg) {
     totalLI.appendChild(newStrong);
     newStrong.textContent = 'Total: ' + this.total + ' cookies';
     ULposition.appendChild(totalLI);
+    }
   }
 }
 
