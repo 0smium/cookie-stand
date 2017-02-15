@@ -1,3 +1,15 @@
+//Create a global array for time of day
+var timeOfDay = ['10am', '11am', '12am', '01pm', '02pm', '03pm', '04pm', '05pm'];
+
+//Create location constructor 'shopLocation'
+var shopLocation = function (name, min, max, avg) {
+  this.name = name; //name of location as string
+  this.min = min; //min cookies per hour
+  this.max = max; //max cookies per hour
+  this.avg = avg; //avg cookies per customer
+}
+
+
 //Pike Place Store
 
 var pikePlace = {
