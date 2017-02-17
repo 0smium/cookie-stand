@@ -1,5 +1,24 @@
 //Create a global array for time of day
 var timeOfDay = ['10am', '11am', '12am', '01pm', '02pm', '03pm', '04pm', '05pm'];
+var listOfShops = [];
+
+var storeTable = document.getElementById('storeTable');
+var headingRow = document.createElement('tr');
+storeTable.appendChild(headingRow);
+var blankTH = document.createElement('th');
+blankTH.textContent = 'BLANK';
+headingRow.appendChild(blankTH);
+
+for (i = 0; i < timeOfDay.length; i++) {
+  var TH = document.createElement('th');
+  TH.textContent = timeOfDay[i];
+  headingRow.appendChild(TH);
+}
+
+var totalsTH = document.createElement('th');
+totalsTH.textContent = 'Daily Location Total';
+headingRow.appendChild(totalsTH);
+
 
 //Create location constructor 'shopLocation'
 var shopLocation = function (name, fullName, min, max, avg) {
@@ -11,6 +30,7 @@ var shopLocation = function (name, fullName, min, max, avg) {
   this.getRandom = function (min, max) {
     return (Math.random() * ((this.max - this.min) + this.min));
   }
+  listOfShops.push(this.name);
   this.cookiesPerHour = [];
   this.total = 0;
   this.populate = function() {
@@ -22,9 +42,23 @@ var shopLocation = function (name, fullName, min, max, avg) {
   }
   this.render = function() {
     this.populate();
+
+    //OLD CODE
+
     var divLocation  = document.getElementById(this.name);
     var newh3 = document.createElement('h3');
     var newHeading = document.createTextNode(this.fullName);
+
+    //NEW CODE
+
+    var shopRow = document.createElement('tr');
+    storeTable.appendChild(shopRow);
+    var shopNameTD = document.createElement('td');
+    shopNameTD.textContent = this.fullName;
+    shopRow.appendChild(shopNameTD);
+
+    //OLD CODE
+
     newh3.appendChild(newHeading);
     divLocation.appendChild(newh3);
     var newUL = document.createElement('ul');
@@ -36,6 +70,17 @@ var shopLocation = function (name, fullName, min, max, avg) {
       // ULposition.appendChild(newLi);
       newUL.appendChild(newLi);
     }
+
+    //NEW CODE
+
+    for (i = 0; i < this.cookiesPerHour.length; i++){
+      var newTD = document.createElement('td');
+      newTD.textContent = this.cookiesPerHour[i];
+      shopRow.appendChild(newTD);
+    }
+
+    //OLD CODE
+
     var totalLI = document.createElement('li');
     totalLI.className = 'total';
     var newStrong = document.createElement('strong');
@@ -43,6 +88,13 @@ var shopLocation = function (name, fullName, min, max, avg) {
     newStrong.textContent = 'Total: ' + this.total + ' cookies';
     // ULposition.appendChild(totalLI);
     newUL.appendChild(totalLI);
+
+    //NEW CODE
+
+    var totalTD = document.createElement('td');
+    totalTD.textContent = this.total;
+    shopRow.appendChild(totalTD);
+
     }
 }
 
@@ -61,7 +113,23 @@ bellevueSquare.render()
 var alki = new shopLocation ('alki', 'Alki Beach', 3, 24, 2.6);
 alki.render()
 
-var grandTotal = pikePlace.total + seaTac.total + southcenter.total + bellevueSquare.total + alki.total
+var totalsTR = document.createElement('tr')
+storeTable.appendChild(totalsTR);
+var totalByTimeOfDayDescTD = document.createElement('td');
+totalByTimeOfDayDescTD.textContent = 'Totals'
+totalsTR.appendChild(totalByTimeOfDayDescTD);
+
+for (i = 0; i < timeOfDay.length; i++) {
+  var totalByTimeOfDayTD = document.createElement('td');
+  totalByTimeOfDayTD.textContent = pikePlace.cookiesPerHour[i] + seaTac.cookiesPerHour[i] + southcenter.cookiesPerHour[i] + bellevueSquare.cookiesPerHour[i] + alki.cookiesPerHour[i];
+  totalsTR.appendChild(totalByTimeOfDayTD);
+}
+
+var grandTotalTD = document.createElement('td');
+grandTotalTD.textContent = pikePlace.total + seaTac.total + southcenter.total + bellevueSquare.total + alki.total;
+totalsTR.appendChild(grandTotalTD);
+
+var grandTotal = pikePlace.total + seaTac.total + southcenter.total + bellevueSquare.total + alki.total;
 var grandTotalDivLocation  = document.getElementById('grandTotal');
 var grandTotalh2 = document.createElement('h2');
 var grandTotalHeading = document.createTextNode('Total: ' + grandTotal + ' cookies');
