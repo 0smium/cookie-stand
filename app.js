@@ -43,53 +43,17 @@ var shopLocation = function (name, fullName, min, max, avg) {
   this.render = function() {
     this.populate();
 
-    //OLD CODE
-
-    // var divLocation  = document.getElementById(this.name);
-    // var newh3 = document.createElement('h3');
-    // var newHeading = document.createTextNode(this.fullName);
-
-    //NEW CODE
-
     var shopRow = document.createElement('tr');
     storeTable.appendChild(shopRow);
     var shopNameTD = document.createElement('td');
     shopNameTD.textContent = this.fullName;
     shopRow.appendChild(shopNameTD);
 
-    //OLD CODE
-
-    // newh3.appendChild(newHeading);
-    // divLocation.appendChild(newh3);
-    // var newUL = document.createElement('ul');
-    // divLocation.appendChild(newUL);
-    // // var ULposition = document.getElementsByTagName('ul');
-    // for (i = 0; i < timeOfDay.length; i++) {
-    //   var newLi = document.createElement('li');
-    //   newLi.textContent = timeOfDay[i] + ': ' + this.cookiesPerHour[i] + ' cookies';
-    //   // ULposition.appendChild(newLi);
-    //   newUL.appendChild(newLi);
-    // }
-
-    //NEW CODE
-
     for (i = 0; i < this.cookiesPerHour.length; i++){
       var newTD = document.createElement('td');
       newTD.textContent = this.cookiesPerHour[i];
       shopRow.appendChild(newTD);
     }
-
-    //OLD CODE
-
-    // var totalLI = document.createElement('li');
-    // totalLI.className = 'total';
-    // var newStrong = document.createElement('strong');
-    // totalLI.appendChild(newStrong);
-    // newStrong.textContent = 'Total: ' + this.total + ' cookies';
-    // // ULposition.appendChild(totalLI);
-    // newUL.appendChild(totalLI);
-
-    //NEW CODE
 
     var totalTD = document.createElement('td');
     totalTD.textContent = this.total;
@@ -128,11 +92,3 @@ for (i = 0; i < timeOfDay.length; i++) {
 var grandTotalTD = document.createElement('td');
 grandTotalTD.textContent = pikePlace.total + seaTac.total + southcenter.total + bellevueSquare.total + alki.total;
 totalsTR.appendChild(grandTotalTD);
-
-// var grandTotal = pikePlace.total + seaTac.total + southcenter.total + bellevueSquare.total + alki.total;
-// var grandTotalDivLocation  = document.getElementById('grandTotal');
-// var grandTotalh2 = document.createElement('h2');
-// var grandTotalHeading = document.createTextNode('Total: ' + grandTotal + ' cookies');
-//
-// grandTotalh2.appendChild(grandTotalHeading);
-// grandTotalDivLocation.appendChild(grandTotalh2);
