@@ -101,6 +101,7 @@ function handleFormSubmit(event) {
   event.target.min.value = null;
   event.target.max.value = null;
   event.target.avg.value = null;
+  getTotals();
 }
 
 form.addEventListener('submit', handleFormSubmit);
@@ -135,3 +136,4 @@ var getTotals = function(){
   grandTotalTD.textContent = grandTotal;
   totalsTR.appendChild(grandTotalTD);
 }
+getTotals();
