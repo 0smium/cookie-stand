@@ -103,8 +103,9 @@ function handleFormSubmit(event) {
   event.target.max.value = null;
   event.target.avg.value = null;
 
-  //update and replace totals
+  // Update and replace totals
 
+  // Access totals row, delete it, and recreate it by calling getTotals function again.
   var totalsTR = document.getElementById('totalsTR');
   totalsTR.remove(1);
   getTotals();
@@ -117,6 +118,7 @@ form.addEventListener('submit', handleFormSubmit);
 var getTotals = function(){
 
   var totalsTR = document.createElement('tr')
+  // Add ID to the totals row for later access (and styling)
   totalsTR.id = 'totalsTR';
 
   storeTable.appendChild(totalsTR);
