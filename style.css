@@ -14,6 +14,19 @@ body {
   overflow: hidden;
 }
 
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+tr {
+  outline: 1px solid black;
+}
+
+td, th {
+  outline: 1px solid black;
+}
+
 .float {
   width: 33%;
   float: left;
@@ -56,6 +69,7 @@ li.total {
 }
 
 footer {
+  margin-top: 20px;
   text-align: center;
   padding-bottom: 20px;
 }
