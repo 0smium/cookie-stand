@@ -8,6 +8,38 @@
 <body>
   <div id="container">
     <h1>Pat's Algae Cookies</h1>
+    <form id="form">
+      <fieldset>
+        <legend>Add a Shop Location</legend>
+
+        <!--make a block-level input  -->
+        <!-- <div> -->
+          <label for="name">Abbreviated Store Name:</label>
+          <input type="text" name="name" required>
+        <!-- </div> -->
+
+        <!--everything else in the form will be inline  -->
+        <br />
+        <label for="fullName">Full Store Name:</label>
+        <input type="text" name="fullName" required>
+
+        <br />
+        <label for="min">Minimum Cookies per Hour</label>
+        <input type="number" name="min" min="0" required>
+
+        <br />
+        <label for="max">Maximum Cookies per Hour</label>
+        <input type="number" name="max" min="0" required>
+
+        <br />
+        <label for="avg">Average Cookies per Customer</label>
+        <input type="number" name="avg" min="0" required>
+
+        <br />
+        <input type="submit" value="Add Location">
+      </fieldset>
+    </form>
+
     <h2 class="projections">Daily Sales Projections:</h2>
     <table id="storeTable"></table>
     <div class="float" id="pikePlace"></div>

@@ -79,30 +79,59 @@ bellevueSquare.render()
 var alki = new shopLocation ('alki', 'Alki Beach', 3, 24, 2.6);
 alki.render()
 
+//Create Listener for Form Submissions
+
+var form = document.getElementById('form');
+
+function handleFormSubmit(event) {
+  event.preventDefault();
+  console.log(event);
+
+  var name = event.target.name.value;
+  var fullName = event.target.fullName.value;
+  var min = parseFloat(event.target.min.value);
+  var max = parseFloat(event.target.max.value);
+  var avg = parseFloat(event.target.avg.value);
+
+  var newShop = new shopLocation(name, fullName, min, max, avg);
+  newShop.render();
+
+  event.target.name.value = null;
+  event.target.fullName.value = null;
+  event.target.min.value = null;
+  event.target.max.value = null;
+  event.target.avg.value = null;
+}
+
+form.addEventListener('submit', handleFormSubmit);
+
 //create column totals
 
-var totalsTR = document.createElement('tr')
-storeTable.appendChild(totalsTR);
-var totalByTimeOfDayDescTD = document.createElement('td');
-totalByTimeOfDayDescTD.textContent = 'Totals'
-totalsTR.appendChild(totalByTimeOfDayDescTD);
+var getTotals = function(){
 
-for (i = 0; i < timeOfDay.length; i++) {
-  var totalByTimeOfDayTD = document.createElement('td');
-  var totalByTimeOfDay = 0;
-  for (j = 0; j < listOfShops.length; j++) {
-    totalByTimeOfDay += listOfShops[j].cookiesPerHour[i]
+  var totalsTR = document.createElement('tr')
+  storeTable.appendChild(totalsTR);
+  var totalByTimeOfDayDescTD = document.createElement('td');
+  totalByTimeOfDayDescTD.textContent = 'Totals'
+  totalsTR.appendChild(totalByTimeOfDayDescTD);
+
+  for (i = 0; i < timeOfDay.length; i++) {
+    var totalByTimeOfDayTD = document.createElement('td');
+    var totalByTimeOfDay = 0;
+    for (j = 0; j < listOfShops.length; j++) {
+      totalByTimeOfDay += listOfShops[j].cookiesPerHour[i]
+    }
+    totalByTimeOfDayTD.textContent = totalByTimeOfDay;
+    totalsTR.appendChild(totalByTimeOfDayTD);
   }
-  totalByTimeOfDayTD.textContent = totalByTimeOfDay;
-  totalsTR.appendChild(totalByTimeOfDayTD);
+
+  var grandTotalTD = document.createElement('td');
+
+  var grandTotal = 0;
+  for (i = 0; i < listOfShops.length; i++) {
+    grandTotal += listOfShops[i].total;
+  }
+
+  grandTotalTD.textContent = grandTotal;
+  totalsTR.appendChild(grandTotalTD);
 }
-
-var grandTotalTD = document.createElement('td');
-
-var grandTotal = 0;
-for (i = 0; i < listOfShops.length; i++) {
-  grandTotal += listOfShops[i].total;
-}
-
-grandTotalTD.textContent = grandTotal;
-totalsTR.appendChild(grandTotalTD);
