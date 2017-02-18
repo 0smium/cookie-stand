@@ -89,9 +89,10 @@ function handleFormSubmit(event) {
 
   var name = event.target.name.value;
   var fullName = event.target.fullName.value;
-  var min = parseFloat(event.target.min.value);
-  var max = parseFloat(event.target.max.value);
-  var avg = parseFloat(event.target.avg.value);
+  var min = event.target.min.value;
+  var max = event.target.max.value;
+  var avg = event.target.avg.value;
+  console.log(avg);
 
   var newShop = new shopLocation(name, fullName, min, max, avg);
   newShop.render();
