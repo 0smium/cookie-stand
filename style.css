@@ -27,6 +27,14 @@ td, th {
   outline: 1px solid black;
 }
 
+tr#totalsTR {
+  font-weight: bold;
+}
+
+td.storeTotal {
+  font-weight: bold;
+}
+
 .float {
   width: 33%;
   float: left;

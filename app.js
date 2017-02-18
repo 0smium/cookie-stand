@@ -56,6 +56,7 @@ var shopLocation = function (name, fullName, min, max, avg) {
     }
 
     var totalTD = document.createElement('td');
+    totalTD.className = 'storeTotal';
     totalTD.textContent = this.total;
     shopRow.appendChild(totalTD);
 
@@ -92,7 +93,6 @@ function handleFormSubmit(event) {
   var min = event.target.min.value;
   var max = event.target.max.value;
   var avg = event.target.avg.value;
-  console.log(avg);
 
   var newShop = new shopLocation(name, fullName, min, max, avg);
   newShop.render();
@@ -102,6 +102,11 @@ function handleFormSubmit(event) {
   event.target.min.value = null;
   event.target.max.value = null;
   event.target.avg.value = null;
+
+  //update and replace totals
+
+  var totalsTR = document.getElementById('totalsTR');
+  totalsTR.remove(1);
   getTotals();
 }
 
@@ -112,6 +117,8 @@ form.addEventListener('submit', handleFormSubmit);
 var getTotals = function(){
 
   var totalsTR = document.createElement('tr')
+  totalsTR.id = 'totalsTR';
+
   storeTable.appendChild(totalsTR);
   var totalByTimeOfDayDescTD = document.createElement('td');
   totalByTimeOfDayDescTD.textContent = 'Totals'
