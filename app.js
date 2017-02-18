@@ -6,7 +6,7 @@ var storeTable = document.getElementById('storeTable');
 var headingRow = document.createElement('tr');
 storeTable.appendChild(headingRow);
 var blankTH = document.createElement('th');
-blankTH.textContent = 'BLANK';
+// blankTH.textContent = 'BLANK';
 headingRow.appendChild(blankTH);
 
 for (i = 0; i < timeOfDay.length; i++) {
@@ -62,6 +62,8 @@ var shopLocation = function (name, fullName, min, max, avg) {
     }
 }
 
+//create and render each shiop location
+
 var pikePlace = new shopLocation ('pikePlace', 'Pike Place', 17, 88, 5.2);
 pikePlace.render()
 
@@ -77,6 +79,8 @@ bellevueSquare.render()
 var alki = new shopLocation ('alki', 'Alki Beach', 3, 24, 2.6);
 alki.render()
 
+//create column totals
+
 var totalsTR = document.createElement('tr')
 storeTable.appendChild(totalsTR);
 var totalByTimeOfDayDescTD = document.createElement('td');
@@ -89,7 +93,6 @@ for (i = 0; i < timeOfDay.length; i++) {
   for (j = 0; j < listOfShops.length; j++) {
     totalByTimeOfDay += listOfShops[j].cookiesPerHour[i]
   }
-  // totalByTimeOfDayTD.textContent = pikePlace.cookiesPerHour[i] + seaTac.cookiesPerHour[i] + southcenter.cookiesPerHour[i] + bellevueSquare.cookiesPerHour[i] + alki.cookiesPerHour[i];
   totalByTimeOfDayTD.textContent = totalByTimeOfDay;
   totalsTR.appendChild(totalByTimeOfDayTD);
 }
