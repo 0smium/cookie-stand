@@ -14,6 +14,40 @@ body {
   overflow: hidden;
 }
 
+form {
+  width:80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form label {
+  width: 40%;
+  float: left;
+  text-align: right;
+  margin-right: 5%;
+}
+
+form input {
+  width: 30%;
+  float: left;
+}
+
+form input.submit {
+  float:none;
+  width:auto;
+  padding: 10px 20px 10px 20px;
+}
+
+form legend {
+  font-weight: bold;
+}
+
+.clearandcenter {
+  margin-top: 50px;
+  clear: both;
+  text-align:center;
+}
+
 table {
   margin-left: auto;
   margin-right: auto;
