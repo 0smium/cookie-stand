@@ -60,6 +60,7 @@ var shopLocation = function (name, fullName, min, max, avg) {
     totalTD.textContent = this.total;
     shopRow.appendChild(totalTD);
     }
+    
 }
 
 //create and render each shiop location
