@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./style.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+</head>
+<body>
+  <div id="container">
+    <h1>Pat's Algae Cookies</h1>
+    <form id="form">
+      <fieldset>
+        <legend>Add a New Shop Location</legend>
+
+        <label for="fullName">Location Name:</label>
+        <input type="text" name="fullName" required>
+        <br />
+
+        <label for="min">Minimum Cookies per Hour:</label>
+        <input type="number" name="min" min="0" required>
+        <br />
+
+        <label for="max">Maximum Cookies per Hour:</label>
+        <input type="number" name="max" min="0" required>
+        <br />
+
+        <label for="avg">Average Cookies per Customer:</label>
+        <input type="number" step="any" name="avg" min="0" required>
+
+        <div class="clearandcenter"><input class = "submit" type="submit" value="Add Location"></div>
+      </fieldset>
+    </form>
+
+    <h2 class="projections">Daily Sales Projections:</h2>
+    <table id="storeTable"></table>
+    <div class="float" id="pikePlace"></div>
+    <div class="float" id="seaTac"></div>
+    <div class="float" id="southcenter"></div>
+    <div class="float" id="bellevueSquare"></div>
+    <div class="float" id="alki"></div>
+    <div class="grandTotal" id="grandTotal"></div>
+    <footer><a href="./styleguide.html">Style Guide</a></footer>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
