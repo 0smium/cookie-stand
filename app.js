@@ -62,24 +62,45 @@ var shopLocation = function (name, fullName, min, max, avg) {
     shopRow.appendChild(totalTD);
 
     }
+    this.alternate = function(id){
+      if(document.getElementsByTagName){
+        var table = document.getElementById('storeTable');
+        var rows = table.getElementsByTagName('tr');
+        for(i = 0; i < rows.length; i++){
+          if(i % 2 === 0){
+            rows[i].className = 'even';
+          }else{
+            rows[i].className = 'odd';
+          }
+        }
+      }
+    }
+    this.alternate()
 }
+
 
 //create and render each shiop location
 
 var pikePlace = new shopLocation ('pikePlace', 'Pike Place', 17, 88, 5.2);
 pikePlace.render()
+pikePlace.alternate()
 
 var seaTac = new shopLocation ('seaTac', 'Sea Tac Airport', 6, 24, 1.2);
 seaTac.render()
+seaTac.alternate()
 
 var southcenter = new shopLocation ('southcenter', 'South Center', 11, 38, 1.9);
 southcenter.render()
+southcenter.alternate()
 
 var bellevueSquare = new shopLocation ('bellevueSquare', 'Bellevue Square', 20, 48, 3.3);
 bellevueSquare.render()
+bellevueSquare.alternate()
 
 var alki = new shopLocation ('alki', 'Alki Beach', 3, 24, 2.6);
 alki.render()
+alki.alternate()
+
 
 //Create Listener for Form Submissions
 
