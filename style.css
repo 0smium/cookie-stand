@@ -164,12 +164,12 @@ li.color5 {
 
 .odd {
   background-color: rgba(100, 100, 100, 0.5);
-  color: white;
+  /*color: white;*/
   width: 100px;
 }
 
 .even {
   /*background-color: rgba(255, 255, 255, 0.6);*/
   width: 100px;
-  color: black;
+  /*color: black;*/
 }
