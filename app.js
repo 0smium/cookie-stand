@@ -1,3 +1,4 @@
+'use strict';
 //Create a global array for time of day
 var timeOfDay = ['10am', '11am', '12am', '01pm', '02pm', '03pm', '04pm', '05pm'];
 var listOfShops = [];
@@ -9,7 +10,7 @@ var blankTH = document.createElement('th');
 // blankTH.textContent = 'BLANK';
 headingRow.appendChild(blankTH);
 
-for (i = 0; i < timeOfDay.length; i++) {
+for (var i = 0; i < timeOfDay.length; i++) {
   var TH = document.createElement('th');
   TH.textContent = timeOfDay[i];
   headingRow.appendChild(TH);
@@ -34,7 +35,7 @@ var shopLocation = function (name, fullName, min, max, avg) {
   this.cookiesPerHour = [];
   this.total = 0;
   this.populate = function() {
-  for (i = 0; i < timeOfDay.length; i++) {
+  for (var i = 0; i < timeOfDay.length; i++) {
     var rand =  Math.round(this.getRandom() * this.avg);
     this.cookiesPerHour.push(rand);
     this.total += rand;
@@ -49,7 +50,7 @@ var shopLocation = function (name, fullName, min, max, avg) {
     shopNameTD.textContent = this.fullName;
     shopRow.appendChild(shopNameTD);
 
-    for (i = 0; i < this.cookiesPerHour.length; i++){
+    for (var i = 0; i < this.cookiesPerHour.length; i++){
       var newTD = document.createElement('td');
       newTD.textContent = this.cookiesPerHour[i];
       shopRow.appendChild(newTD);
@@ -62,6 +63,7 @@ var shopLocation = function (name, fullName, min, max, avg) {
     }
     
 }
+
 
 //create and render each shiop location
 
@@ -84,6 +86,7 @@ bellevueSquare.render()
 var alki = new shopLocation ('alki', 'Alki Beach', 3, 24, 2.6);
 alki.render()
 // alki.alternate()
+
 
 //Create Listener for Form Submissions
 
@@ -131,10 +134,10 @@ var getTotals = function(){
   totalByTimeOfDayDescTD.textContent = 'Totals'
   totalsTR.appendChild(totalByTimeOfDayDescTD);
 
-  for (i = 0; i < timeOfDay.length; i++) {
+  for (var i = 0; i < timeOfDay.length; i++) {
     var totalByTimeOfDayTD = document.createElement('td');
     var totalByTimeOfDay = 0;
-    for (j = 0; j < listOfShops.length; j++) {
+    for (var j = 0; j < listOfShops.length; j++) {
       totalByTimeOfDay += listOfShops[j].cookiesPerHour[i]
     }
     totalByTimeOfDayTD.textContent = totalByTimeOfDay;
@@ -144,7 +147,7 @@ var getTotals = function(){
   var grandTotalTD = document.createElement('td');
 
   var grandTotal = 0;
-  for (i = 0; i < listOfShops.length; i++) {
+  for (var i = 0; i < listOfShops.length; i++) {
     grandTotal += listOfShops[i].total;
   }
 
