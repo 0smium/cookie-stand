@@ -1,6 +1,7 @@
 //Create a global array for time of day
 var timeOfDay = ['10am', '11am', '12am', '01pm', '02pm', '03pm', '04pm', '05pm'];
 var listOfShops = [];
+var names = [];
 
 var storeTable = document.getElementById('storeTable');
 var headingRow = document.createElement('tr');
@@ -31,6 +32,7 @@ var shopLocation = function (name, fullName, min, max, avg) {
     return (Math.random() * ((this.max - this.min) + this.min));
   }
   listOfShops.push(this);
+  names.push(this.fullName);
   this.cookiesPerHour = [];
   this.total = 0;
   this.populate = function() {
@@ -99,21 +101,30 @@ function handleFormSubmit(event) {
   var max = event.target.max.value;
   var avg = event.target.avg.value;
 
-  var newShop = new shopLocation(name, fullName, min, max, avg);
-  newShop.render();
+  //adding name check functionality
+  if (names.indexOf(fullName) === -1) {
+    // console.log('shop does not exist yet');
 
+    //Create and render new shop
+    var newShop = new shopLocation(name, fullName, min, max, avg);
+    newShop.render();
+
+    // Access totals row, delete it, and recreate it by calling getTotals function again.
+    var totalsTR = document.getElementById('totalsTR');
+    totalsTR.remove(1);
+    getTotals();
+  }
+  else {
+    // console.log('shop already exists')
+    alert('Shop already exists. Try another name.')
+  }
+
+  // Update and replace totals
   event.target.name.value = null;
   event.target.fullName.value = null;
   event.target.min.value = null;
   event.target.max.value = null;
   event.target.avg.value = null;
-
-  // Update and replace totals
-
-  // Access totals row, delete it, and recreate it by calling getTotals function again.
-  var totalsTR = document.getElementById('totalsTR');
-  totalsTR.remove(1);
-  getTotals();
 }
 
 form.addEventListener('submit', handleFormSubmit);
