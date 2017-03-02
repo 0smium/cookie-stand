@@ -116,6 +116,11 @@ footer {
   padding-bottom: 20px;
 }
 
+footer ul li {
+  display:inline;
+  padding: 0 5px 0 5px;
+}
+
 a, a:visited {
   color:#002222;
   font-weight: bold;

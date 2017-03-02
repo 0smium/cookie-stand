@@ -113,18 +113,21 @@ function handleFormSubmit(event) {
     var totalsTR = document.getElementById('totalsTR');
     totalsTR.remove(1);
     getTotals();
+
+    // Update and replace totals
+    event.target.name.value = null;
+    event.target.fullName.value = null;
+    event.target.min.value = null;
+    event.target.max.value = null;
+    event.target.avg.value = null;
+    event.target.fullName.style.borderColor = null;
   }
   else {
     // console.log('shop already exists')
     alert('Shop already exists. Try another name.')
+    event.target.fullName.style.borderColor = "red";
   }
 
-  // Update and replace totals
-  event.target.name.value = null;
-  event.target.fullName.value = null;
-  event.target.min.value = null;
-  event.target.max.value = null;
-  event.target.avg.value = null;
 }
 
 form.addEventListener('submit', handleFormSubmit);
