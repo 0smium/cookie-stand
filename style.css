@@ -5,7 +5,7 @@ body {
   font-family: serif;
 }
 
-#container {
+main {
   margin-left: auto;
   margin-right: auto;
   background-color: rgba(255, 255, 255, 0.4);
@@ -87,10 +87,23 @@ h3 {
   font-family: serif;
 }
 
+h3.home {
+  text-align: center;
+}
+
 h1 {
   text-align: center;
   font-family: 'Gloria Hallelujah', cursive;
   color: #002222;
+}
+
+img.logo {
+  width:70px;
+  /*position:static;*/
+  position: absolute;
+  margin-left: 177px;
+  margin-top: 10px;
+  /*left:200px;*/
 }
 
 h2 {
@@ -116,7 +129,26 @@ footer {
   padding-bottom: 20px;
 }
 
+footer ul {
+  padding:0;
+}
+
 footer ul li {
+  display:inline;
+  padding: 0 5px 0 5px;
+}
+
+nav {
+  margin-top: 20px;
+  text-align: center;
+  /*padding-bottom: 10px;*/
+}
+
+nav ul {
+  padding:0;
+}
+
+nav ul li {
   display:inline;
   padding: 0 5px 0 5px;
 }
@@ -126,8 +158,16 @@ a, a:visited {
   font-weight: bold;
 }
 
-a:hover {
+a:hover, a.active:hover {
   color: #0088cc;
+}
+
+a.active {
+  color: #dddddd;
+}
+
+a.double-underline {
+  border-bottom: 3px double;
 }
 
 /* For the Style Guide */
@@ -135,6 +175,37 @@ a:hover {
 p.colors {
   margin-left: 20px;
   margin-right: 500px;
+}
+
+p {
+  margin: 0 80px 25px 80px;
+  text-indent: 20px;
+  text-align: justify;
+  /*color: #dddddd;*/
+  font-size: 1.1em;
+  line-height: 1em;
+  clear: both;
+}
+
+img.left {
+  float: left;
+  margin-right: 10px;
+  border-radius: 15px;
+}
+
+img.right {
+  float: right;
+  margin-left: 10px;
+  border-radius: 15px;
+}
+
+p.center {
+  text-align: center;
+  text-indent: none;
+}
+
+p.center img {
+  border-radius: 15px;
 }
 
 ul.colorList {
